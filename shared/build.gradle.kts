@@ -29,8 +29,14 @@ kotlin {
     }
     
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
+        }
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.composeVM)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
