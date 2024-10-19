@@ -17,10 +17,10 @@ kotlin {
     iosSimulatorArm64()
 
     cocoapods {
-        summary = "Some description for the Shared Module"
+        summary = "Some description for the Shared Modu"
         homepage = "Link to the Shared Module homepage"
         version = "1.0"
-        ios.deploymentTarget = "16.0"
+        ios.deploymentTarget = "18.0"
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
@@ -51,7 +51,7 @@ android {
         minSdk = 24
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
