@@ -64,11 +64,8 @@ android {
 
 dependencies {
     // KSP support for Room Compiler.
-    kspCommonMainMetadata(libs.room.compiler)
+    ksp(libs.room.compiler)
 }
-
-// Solves implicit dependency issue and IDEs source code detection.
-kotlin.sourceSets.commonMain { tasks.withType<KspTaskMetadata> { kotlin.srcDir(destinationDirectory) } }
 
 room {
     schemaDirectory("$projectDir/schemas")
