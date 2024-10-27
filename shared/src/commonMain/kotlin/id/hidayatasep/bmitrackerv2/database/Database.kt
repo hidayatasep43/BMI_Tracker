@@ -32,3 +32,5 @@ fun getRoomDatabase(
         .setQueryCoroutineContext(Dispatchers.IO)
         .build()
 }
+
+fun getUserGrowthDao(appDatabase: AppDatabase) = appDatabase.getUserGrowthDao()
