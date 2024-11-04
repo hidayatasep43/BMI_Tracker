@@ -1,9 +1,9 @@
 package id.hidayatasep.bmitrackerv2.di
 
-import id.hidayatasep.bmitrackerv2.data.datasource.impl.UserLocalDataSourceImpl
-import id.hidayatasep.bmitrackerv2.data.datasource.UserLocalDataSource
-import id.hidayatasep.bmitrackerv2.data.repository.UserRepository
-import id.hidayatasep.bmitrackerv2.data.repository.impl.UserRepositoryImpl
+import id.hidayatasep.bmitrackerv2.data.datasource.GrowthLocalDataSource
+import id.hidayatasep.bmitrackerv2.data.repository.GrowthRepository
+import id.hidayatasep.bmitrackerv2.data.repository.impl.GrowthRepositoryImpl
+import id.hidayatasep.bmitrackerv2.data.datasource.impl.UserGrowthLocalDataSourceImpl
 import id.hidayatasep.bmitrackerv2.database.getRoomDatabase
 import id.hidayatasep.bmitrackerv2.database.getUserGrowthDao
 import org.koin.core.context.startKoin
@@ -27,11 +27,11 @@ fun initKoin(config: KoinAppDeclaration? = null) =
     }
 
 val provideDataSourceModule = module {
-    singleOf(::UserLocalDataSourceImpl).bind(UserLocalDataSource::class)
+    singleOf(::UserGrowthLocalDataSourceImpl).bind(GrowthLocalDataSource::class)
 }
 
 val provideRepositoryModule = module {
-    singleOf(::UserRepositoryImpl).bind(UserRepository::class)
+    singleOf(::GrowthRepositoryImpl).bind(GrowthRepository::class)
 }
 
 val provideDatabaseModule = module {

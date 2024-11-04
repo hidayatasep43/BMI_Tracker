@@ -39,7 +39,6 @@ kotlin {
     
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
@@ -48,6 +47,7 @@ kotlin {
             implementation(libs.koin.composeVM)
             implementation(libs.room.runtime)
             implementation(libs.sqlite.bundled)
+            implementation(libs.kotlinx.datetime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

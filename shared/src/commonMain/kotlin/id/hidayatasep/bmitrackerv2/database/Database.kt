@@ -5,12 +5,12 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import id.hidayatasep.bmitrackerv2.database.user_growth.UserGrowth
+import id.hidayatasep.bmitrackerv2.database.user_growth.UserGrowthEntity
 import id.hidayatasep.bmitrackerv2.database.user_growth.UserGrowthDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 
-@Database(entities = [UserGrowth::class], version = 1)
+@Database(entities = [UserGrowthEntity::class], version = 1)
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun getUserGrowthDao(): UserGrowthDao

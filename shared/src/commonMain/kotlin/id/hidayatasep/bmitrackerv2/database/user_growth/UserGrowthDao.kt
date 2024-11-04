@@ -8,10 +8,10 @@ import androidx.room.Query
 interface UserGrowthDao {
 
     @Insert
-    suspend fun insertGrowth(userGrowth: UserGrowth)
+    suspend fun insertGrowth(userGrowth: UserGrowthEntity)
 
     @Query("SELECT * FROM user_growth ORDER BY date DESC")
-    suspend fun getAllGrowthRecords(): List<UserGrowth>
+    suspend fun getAllGrowthRecords(): List<UserGrowthEntity>
 
     @Query("DELETE FROM user_growth")
     suspend fun deleteAllGrowthRecords()
