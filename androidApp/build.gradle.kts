@@ -16,6 +16,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     packaging {
         resources {
@@ -42,5 +43,9 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.compose.foundation)
+    implementation(libs.androidx.material3.android)
     debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.android)
 }
