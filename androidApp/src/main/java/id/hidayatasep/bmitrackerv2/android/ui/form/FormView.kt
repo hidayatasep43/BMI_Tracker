@@ -38,7 +38,6 @@ private fun FormView(
     formState: FormState,
     listener: FormListener? = null
 ) {
-    LogCompositions("FormView", "FormView content")
 
     var showSnackbar by remember { mutableStateOf(false) }
     LaunchedEffect(formState.errorMessage) {
