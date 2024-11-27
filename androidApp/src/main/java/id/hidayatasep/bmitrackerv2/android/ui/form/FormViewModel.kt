@@ -30,9 +30,10 @@ class FormViewModel(private val growthRepository: GrowthRepository) : ViewModel(
         val height = _formState.value.height.toFloat()
 
         viewModelScope.launch {
+            val bmiResult = growthRepository.calculateBMI(weight, height)
+            _formState.value = _formState.value.copy(message = bmiResult.category, bmiResult = bmiResult.bmi)
             growthRepository.insertGrowth(weight, height)
         }
-
     }
 
     private fun validateInputs(): Boolean {
@@ -59,5 +60,7 @@ data class FormState(
     val age: String = "",
     val weight: String = "",
     val height: String = "",
-    val errorMessage: String? = null
+    val errorMessage: String? = null,
+    val message: String? = null,
+    val bmiResult: Float? = null
 )

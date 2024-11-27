@@ -15,6 +15,7 @@ class UserInputViewModel: ObservableObject {
     @Published var bmiResult: String = ""
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
+    @Published var bmiResultMessage: String? = nil
     
     let growthRepository: GrowthRepository
     
@@ -43,9 +44,9 @@ class UserInputViewModel: ObservableObject {
         }
         
         // Calculate BMI
-        let heightInMeters = height / 100
-        let bmi = weight / (heightInMeters * heightInMeters)
-        bmiResult = String(format: "%.2f", bmi)
+        let bmi = growthRepository.calculateBMI(weight: weight, height: height)
+        bmiResult = String(format: "%.2f", bmi.bmi)
+        bmiResultMessage = bmi.category
         
         Task {
             do {
